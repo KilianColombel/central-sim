@@ -1,0 +1,12 @@
+./raylib-rs
+
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.gz
+*.toc
+*.aux
+*.pdf
+*.pdf

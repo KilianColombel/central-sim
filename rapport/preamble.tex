@@ -1,0 +1,55 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\IfFileExists{french.ldf}{\usepackage[french]{babel}}{%
+  \usepackage{babel}\babelprovide[import,main]{french}%
+  \hyphenpenalty=10000\exhyphenpenalty=10000
+}
+\usepackage{microtype}
+\usepackage{lmodern,amsmath,amssymb}
+\usepackage[a4paper,margin=24mm,headheight=14pt]{geometry}
+\usepackage{xcolor,tikz,fancyhdr,graphicx,float}
+\usetikzlibrary{arrows.meta}
+\usepackage{hyperref}
+\input{figures/palette.tex}
+\tikzset{
+ schema/.style={font=\small,text=schemaInk,draw=schemaInk,line width=.7pt,
+   >=Stealth,line cap=round,line join=round},
+ schema axis/.style={draw=schemaMuted,line width=.55pt,->},
+ schema curve/.style={draw=accent,line width=.95pt},
+ schema vector/.style={draw=accent,line width=.9pt,->},
+ schema guide/.style={draw=schemaMuted,line width=.55pt,densely dashed},
+ schema approximation/.style={draw=schemaOrange,line width=.9pt},
+ schema secondary/.style={draw=schemaGreen,line width=.9pt},
+ schema area/.style={fill=accent!10,draw=none}
+}
+\hypersetup{colorlinks=true,linkcolor=accent,urlcolor=accent,pdftitle={Simulateur de forces centrales - Rappels mathématiques}}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[LO]{\parbox[t]{.46\textwidth}{\scriptsize\sffamily\raggedright\nouppercase{\leftmark}}}
+\fancyfoot[RO]{\small\sffamily\thepage}
+\fancyfoot[LE]{\small\sffamily\thepage}
+\fancyfoot[RE]{\parbox[t]{.46\textwidth}{\scriptsize\sffamily\raggedleft\nouppercase{\leftmark}}}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[LO]{\parbox[t]{.46\textwidth}{\scriptsize\sffamily\raggedright\nouppercase{\leftmark}}}%
+  \fancyfoot[RO]{\small\sffamily\thepage}%
+  \fancyfoot[LE]{\small\sffamily\thepage}%
+  \fancyfoot[RE]{\parbox[t]{.46\textwidth}{\scriptsize\sffamily\raggedleft\nouppercase{\leftmark}}}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\setcounter{tocdepth}{1}
+\numberwithin{equation}{section}
+\newcommand{\sourcepage}[1]{{\small\color{gray}Source : page manuscrite #1.}\par\medskip}
+\newcommand{\afaire}[1]{\par\smallskip\noindent\fbox{\parbox{0.94\linewidth}{\textbf{À compléter (manuscrit).} #1}}\par\smallskip}
+\newcommand{\Em}{E_{\mathrm m}}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Ocal}{\mathcal O}

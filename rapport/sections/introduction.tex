@@ -1,0 +1,36 @@
+\part{Introduction}
+Nous cherchons à travers ce projet multidisciplinaire à construire un moteur de simulation de forces centrales avec pour objectif, une implémentation informatique des simulations en Rust avec raylib. 
+
+\bigbreak
+
+Prenons un système à $N$ masses ponctuelles en interaction gravitationnelle, le problème de Cauchy s'écrit, pour toute masse $i\in[\![1,N]\!]$:
+\begin{equation}
+ \begin{cases}
+ \displaystyle\frac{\mathrm d\vec r_i}{\mathrm dt}=\vec v_i,\\[4pt]
+ \displaystyle\frac{\mathrm d\vec v_i}{\mathrm dt}
+ =G\sum_{j\ne i}m_j\frac{\vec r_j-\vec r_i}{\|\vec r_j-\vec r_i\|^3},\\[4pt]
+ \vec r_i(t_0)=\vec r_{i,0},\qquad \vec v_i(t_0)=\vec v_{i,0}.
+ \end{cases}
+\end{equation}
+L'état possède $6N$ composantes dans l'espace!
+En effet, chaque corps est décrit par sa position et sa vitesse. Alors, dans l'espace, cela donne $(x_i,y_i,z_i,v_{x,i},v_{y,i},v_{z,i})$, soit six composantes par corps.
+
+Si $f$ est continue et localement lipschitzienne en $y$, le théorème de Cauchy-Lipschitz assure une solution locale unique.
+
+Mais l'existence d'une solution exacte ne veut pas nécessairement dire qu'on dispose d'une formule explicite pour la calculer! $6N$ composantes représente un défi calculatoire de taille que nous allons chercher à approcher de manière mathématique.
+
+\bigskip
+
+L'objectif final est de simuler $N$ corps isolés en interaction. 
+
+Il existe des solutions exactes pour les problèmes jusqu'à deux corps soumis uniquement à leur attraction gravitationnelle. En effet, cela se ramène à un problème central pour leur mouvement relatif. En revanche, dès trois corps, il n'existe plus de formule explicite générale permettant de calculer simplement les trajectoires, même si des solutions particulières existent. 
+
+On utilisera ici l'intégration numérique pour traiter des conditions initiales générales.
+
+\bigskip
+
+Attention : chaque interaction entre deux corps est centrale, mais leur somme sur un corps n'est généralement pas dirigée vers un centre fixe. Les rappels à centre fixe fournissent ainsi des cas de référence avant le passage au système complet.
+
+
+
+

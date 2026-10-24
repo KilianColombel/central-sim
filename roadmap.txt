@@ -1,0 +1,13 @@
+v0.0  rendu de sphères et navigation dans un espace en 3D
+v0.1  particule dans un potentiel central
+v0.2  Euler / RK4 / Verlet / Leapfrog
+v0.3  conservation énergie/moment cinétique
+v0.4  problème à deux corps
+v0.5  problème à trois corps
+v0.6  N-body naïf O(N²)
+v0.7  benchmarks + profiling
+v0.8  Rayon
+v0.9  Barnes-Hut
+v1.0  viewer interactif
+v1.1  3D
+v1.2  GPU
